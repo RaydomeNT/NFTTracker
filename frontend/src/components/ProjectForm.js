@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useProjectsContext } from "../hooks/useProjectsContext";
 
 const ProjectForm = () => {
+    const { dispatch } = useProjectsContext()
+
     const [title, setTitle] = useState('')
     const [date, setDate] = useState('')
     const [time, setTime] = useState('')
@@ -15,7 +18,7 @@ const ProjectForm = () => {
 
         const project = {title, date, time, wl, walletSub, maxAmount, twitterLink}
 
-        const response = await fetch('/api/projects', {
+        const response = await fetch('http://localhost:5000/api/projects', {
         method: 'POST',
         body: JSON.stringify(project),
         headers: {
@@ -37,6 +40,7 @@ const ProjectForm = () => {
         setTwitterLink('')
         setError(null)
         console.log("new project added", json)
+        dispatch({type: 'CREATE_PROJECT', payload: json})
     }
 }
 

@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useProjectsContext } from "../hooks/useProjectsContext";
 
 //components
 import ProjectDetails from "../components/ProjectDetails";
 import ProjectForm from "../components/ProjectForm";
 
 const Home = () => {
-    const [projects, setProjects] = useState(null)
+    const {projects, dispatch} = useProjectsContext();
 
     useEffect(() => {
         const fetchProjects = async () => {
@@ -13,11 +14,12 @@ const Home = () => {
             const json = await response.json()
 
             if (response.ok) {
-                setProjects(json)
+                dispatch({type: 'SET_PROJECTS', payload: json})
             }
         }
 
         fetchProjects()
+           // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
