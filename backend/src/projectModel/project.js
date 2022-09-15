@@ -8,8 +8,12 @@ const projectSchema = new Schema({
         required: true,
         unique: true
     },
+    price: {
+        type: Number,
+        required: false
+    },
     date: {
-        type: String,
+        type: Date,
         required: false
     },
     time: {
@@ -32,6 +36,6 @@ const projectSchema = new Schema({
         type: String,
         required: false
     }
-}, { timestamps: true })
+}, { timestamps: true });
 
 module.exports = mongoose.model('Project', projectSchema);

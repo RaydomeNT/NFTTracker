@@ -5,6 +5,7 @@ const ProjectForm = () => {
     const { dispatch } = useProjectsContext()
 
     const [title, setTitle] = useState('')
+    const [price, setPrice] = useState('')
     const [date, setDate] = useState('')
     const [time, setTime] = useState('')
     const [wl, setWl] = useState('')
@@ -12,6 +13,7 @@ const ProjectForm = () => {
     const [maxAmount, setMaxAmount] = useState('')
     const [twitterLink, setTwitterLink] = useState('')
     const [error, setError] = useState(null)
+    const [emptyFields, setEmptyFields] = useState([])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -29,6 +31,7 @@ const ProjectForm = () => {
 
     if (!response.ok) {
         setError(json.error)
+        setEmptyFields(json.emptyFields)
     }
     if (response.ok) {
         setTitle('')
@@ -39,6 +42,7 @@ const ProjectForm = () => {
         setMaxAmount('')
         setTwitterLink('')
         setError(null)
+        setEmptyFields([])
         console.log("new project added", json)
         dispatch({type: 'CREATE_PROJECT', payload: json})
     }
@@ -53,6 +57,14 @@ const ProjectForm = () => {
                 type="text"
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
+                className={emptyFields.includes('title') ? 'error' : ''}
+                />
+                
+            <label>Mint Price:</label>
+            <input
+                type="number"
+                onChange={(e) => setPrice(e.target.value)}
+                value={price}
                 />
 
             <label>Mint Date:</label>

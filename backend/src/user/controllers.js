@@ -28,10 +28,21 @@ const getProject = async (req, res) => {
 
 //create a new project
 const createProject = async (req, res) => {
-    const {title, date, time, wl, walletSub, maxAmount, twitterLink} = req.body
+    const {title, price, date, time, wl, walletSub, maxAmount, twitterLink} = req.body
+
+    let emptyFields = []
+
+    if(!title) {
+        emptyFields.push('title')
+    }
+
+    if(emptyFields.lenght > 0) {
+        return res.status(400).json({ error: 'Please fill in the missing information', emptyFields})
+    }
+
     //add project to db
     try {
-        const project = await Project.create({title, date, time, wl, walletSub, maxAmount, twitterLink})
+        const project = await Project.create({title, price, date, time, wl, walletSub, maxAmount, twitterLink})
         res.status(200).json(project)
     } catch (error) {
         res.status(400).json({error: error.message})
