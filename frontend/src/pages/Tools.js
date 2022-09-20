@@ -1,6 +1,6 @@
 const Tools = () => {
     return(
-        <div className="pages">
+        <div className="toolPage">
         <h1>Free To Use NFT Tools</h1>
             <p>
             <strong><a href="http://Flips.Finance" target="_blank" rel="noopener noreferrer">Flips Finance</a></strong><br></br>
@@ -30,10 +30,17 @@ const Tools = () => {
                 Gem is a marketplace aggregator showing listing from OpenSea, X2Y2 and Looks Rare. You can sweep multiple items 
                 from a collection and see volume, prices, sales and floor depth.
             </ul>
-            
-            6. NFTBank<br></br>
-            7. Degen Mint<br></br>
-            </p>
+            <strong><a href="https://nftbank.ai/" target="_blank" rel="noopener noreferrer">NFTBank</a></strong><br></br>
+            <ul>
+                NFTBank is a wallet monitoring tool that allows you to see see your profit and loss, total porfolio value and
+                acquisition prices.  
+            </ul>
+            <strong><a href="https://degenmint.xyz/" target="_blank" rel="noopener noreferrer">Degen Mint</a></strong><br></br>
+            <ul>
+                Degen mint is a Real-time NFT mint dashboard. You can see what is currently minting and view live data.
+                You can view how many mints over a certain time, max supply and unique wallets.
+            </ul>
+        </p>
         </div>
     )
 }

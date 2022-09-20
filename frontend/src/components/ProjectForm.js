@@ -18,7 +18,7 @@ const ProjectForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const project = {title, date, time, wl, walletSub, maxAmount, twitterLink}
+        const project = {title, price, date, time, wl, walletSub, maxAmount, twitterLink}
 
         const response = await fetch('http://localhost:5000/api/projects', {
         method: 'POST',
@@ -35,6 +35,7 @@ const ProjectForm = () => {
     }
     if (response.ok) {
         setTitle('')
+        setPrice('')
         setDate('')
         setTime('')
         setWl('')
@@ -81,7 +82,7 @@ const ProjectForm = () => {
                 value={time}
                 />
 
-            <label>Have Whitelist:</label>
+            <label>Whitelisted:</label>
             <input
                 type="text"
                 onChange={(e) => setWl(e.target.value)}

@@ -19,16 +19,16 @@ const ProjectDetails = ({ project }) => {
         }
     }
 
-    const editClick = async () => {
-        const response = await fetch('http://localhost:5000/api/projects/' + project._id, {
-            method: 'UPDATE'
-        })
-        const json = await response.json()
+    // const editClick = async () => {
+    //     const response = await fetch('http://localhost:5000/api/projects/' + project._id, {
+    //         method: 'UPDATE'
+    //     })
+    //     const json = await response.json()
 
-        if (response.ok) {
-            dispatch({type: 'UPDATE_PROJECT', payload: json})
-        }
-    }
+    //     if (response.ok) {
+    //         dispatch({type: 'UPDATE_PROJECT', payload: json})
+    //     }
+    // }
 
     return (
         <div className="project-details">
@@ -39,9 +39,9 @@ const ProjectDetails = ({ project }) => {
             <p><strong>Whitelisted: </strong>{project.wl}</p>
             <p><strong>Wallet Submitted: </strong>{project.walletSub}</p>
             <p><strong>Max Amount: </strong>{project.maxAmount}</p>
-            <p><strong>Twitter Link: </strong>{project.twitterLink}</p>
+            <p><strong>Twitter Link: </strong><a href={project.twitterLink}>{project.twitterLink}</a></p>
             <p>{formatDistanceToNow(new Date(project.createdAt), { addSuffix: true })}</p>
-            <span id='edit' className="material-symbols-outlined" onClick={editClick}>edit</span><br></br>
+            {/* <span id='edit' className="material-symbols-outlined" onClick={editClick}>edit</span> */}
             <span id='delete' className="material-symbols-outlined" onClick={handleClick}>delete</span>
         </div>
     )
