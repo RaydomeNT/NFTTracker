@@ -1,7 +1,7 @@
 const Twitter = () => {
     return(
         <div className="twitterPage">
-            <h1>Accounts to folow in the NFT Twitter space</h1>
+            <h1>Accounts to follow in the NFT Twitter space</h1>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 const Projects = () => {
     return(
         <div className="projectsPage">
-            <h1>NFT Projects blog</h1>
+            <h1>NFT Projects Blog</h1>
         </div>
     )
 }
