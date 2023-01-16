@@ -9,6 +9,12 @@ const Navbar = () => {
         <Link to="/projects"><h1>NFT Projects</h1></Link>
         <Link to="/twitter"><h1>NFT Twitter</h1></Link>
       </div>
+      <nav>
+        <div>
+          <Link to="/login">Login</Link>
+          <Link to="/signup">Signup</Link>
+        </div>
+      </nav>
     </header>
   );
 };
