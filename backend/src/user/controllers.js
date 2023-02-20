@@ -3,7 +3,9 @@ const mongoose = require("mongoose");
 
 //get all projects
 const getProjects = async (req, res) => {
-  const projects = await Project.find({}).sort({ createdAt: -1 });
+  const user_id = req.user._id
+  
+  const projects = await Project.find({ user_id }).sort({ createdAt: -1 });
 
   res.status(200).json(projects);
 };
@@ -44,6 +46,7 @@ const createProject = async (req, res) => {
 
   //add project to db
   try {
+    const user_id = req.user._id
     const project = await Project.create({
       title,
       price,
@@ -53,6 +56,7 @@ const createProject = async (req, res) => {
       walletSub,
       maxAmount,
       twitterLink,
+      user_id
     });
     res.status(200).json(project);
   } catch (error) {
