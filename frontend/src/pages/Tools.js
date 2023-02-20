@@ -35,9 +35,9 @@ const Tools = () => {
                 NFTBank is a wallet monitoring tool that allows you to see see your profit and loss, total porfolio value and
                 acquisition prices.  
             </ul>
-            <strong><a href="https://degenmint.xyz/" target="_blank" rel="noopener noreferrer">Degen Mint</a></strong><br></br>
+            <strong><a href="https://catchmint.xyz/" target="_blank" rel="noopener noreferrer">Catch Mint</a></strong><br></br>
             <ul>
-                Degen mint is a Real-time NFT mint dashboard. You can see what is currently minting and view live data.
+                Catch mint is a Real-time NFT mint dashboard. You can see what is currently minting and view live data.
                 You can view how many mints over a certain time, max supply and unique wallets.
             </ul>
         </p>
