@@ -75,8 +75,9 @@ header a {
 } */
 
 .material-symbols-outlined {
-  top: 20px;
-  right: 20px;
+  margin-right: 5px;
+  /* top: 20px;
+  right: 20px; */
   cursor: pointer;
   background: #f1f1f1;
   padding: 6px;
