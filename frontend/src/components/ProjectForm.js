@@ -91,18 +91,19 @@ const ProjectForm = () => {
                 />
 
             <label>Whitelisted:</label>
-            <input
-                type="text"
-                onChange={(e) => setWl(e.target.value)}
-                value={wl}
-                />
+                <select value={wl} onChange={(e) => setWl(e.target.value)}>
+                    <option value="">Select an option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
 
             <label>Wallet Submitted:</label>
-            <input
-                type="text"
-                onChange={(e) => setWalletSub(e.target.value)}
-                value={walletSub}
-                />
+                <select value={walletSub} onChange={(e) => setWalletSub(e.target.value)}>
+                    <option value="">Select an option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="DTC">DTC</option>
+                </select>
 
             <label>Max Amount per Mint:</label>
             <input

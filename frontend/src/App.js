@@ -9,6 +9,7 @@ import Twitter from "./pages/Twitter";
 import Navbar from "./components/Navbar";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Settings from "./pages/Settings";
 
 function App() {
   const { user } = useAuthContext()
@@ -25,6 +26,7 @@ function App() {
             <Route path="/tools" element={<Tools />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/twitter" element={<Twitter />} />
+            <Route path="/settings" element={<Settings />} />
           </Routes>
         </div>
       </BrowserRouter>
